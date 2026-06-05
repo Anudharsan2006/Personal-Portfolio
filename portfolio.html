@@ -1,0 +1,1481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Anudharsan R R </title>
+    <meta name="description" content="Professional portfolio of Anudharsan R R, an Electronics Engineering student specializing in FPGA development, RTL design, VLSI floorplanning, and embedded systems prototyping.">
+    <meta name="keywords" content="Anudharsan, Anudharsan R R, FPGA Developer, RTL Design, VLSI Engineering, Verilog HDL, Xilinx Vivado, Systems on Chip, ASIC Flow, Hardware Engineering Portfolio">
+    <meta name="author" content="Anudharsan R R">
+    <meta name="robots" content="index, follow">
+
+    <meta property="og:title" content="Anudharsan R R | FPGA Developer & RTL Design Engineer">
+    <meta property="og:description" content="Architecting high-performance digital logic systems, optimized RTL core models, and robust embedded firmware hardware arrays.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://Anudharsan2006.github.io/">
+    <meta property="og:site_name" content="Anudharsan Engineering Hub">
+    <!-- --- PLACE THIS INSIDE YOUR <head> TO UPDATE THE BROWSER TAB ICON --- -->
+    <link rel="icon" type="image/png" href="favicon.png">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --bg-dark: #060814;
+            --bg-card: rgba(15, 22, 42, 0.75);
+            --primary: #38bdf8;
+            --primary-glow: rgba(56, 189, 248, 0.3);
+            --accent-crimson: #ef4444;
+            --accent-glow: rgba(239, 68, 68, 0.25);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --border-color: rgba(255, 255, 255, 0.08);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            user-select: none;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-primary);
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4, .logo, .btn-action {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        /* Interactive Semiconductor Fab Process Background Canvas */
+        #fab-process-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -2;
+            background-color: #040610; 
+            pointer-events: none;
+        }
+
+        /* Ambient Crimson and Blue Glow Layouts matching image backgrounds */
+        .core-beam-glow {
+            position: fixed;
+            width: 100vw;
+            height: 100vh;
+            background: 
+                radial-gradient(circle at 80% 60%, var(--accent-glow) 0%, transparent 50%),
+                radial-gradient(circle at 20% 30%, rgba(56, 189, 248, 0.05) 0%, transparent 60%);
+            top: 0;
+            left: 0;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        /* Top Bar Branding & Social Links Hub */
+        .top-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 35px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            pointer-events: none;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            letter-spacing: -1px;
+            pointer-events: auto;
+        }
+        .logo span { color: var(--accent-crimson); }
+
+        .top-socials {
+            display: flex;
+            gap: 24px;
+            list-style: none;
+            pointer-events: auto;
+            align-items: center;
+        }
+        .top-socials a {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+        }
+        .top-socials a:hover {
+            color: var(--text-primary);
+            transform: scale(1.1);
+        }
+        .top-socials .github-icon-btn {
+            background: var(--accent-crimson);
+            color: #ffffff;
+            width: 28px;
+            height: 28px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            font-size: 0.95rem;
+        }
+        .top-socials .github-icon-btn:hover {
+            background: #ffffff;
+            color: var(--bg-dark);
+        }
+
+        /* Floating Fixed Right-Side Icon Navigation Dock */
+        .right-nav-dock {
+            position: fixed;
+            right: 40px;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            background: rgba(15, 22, 42, 0.45);
+            padding: 28px 16px;
+            border-radius: 100px;
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--border-color);
+            z-index: 1000;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+        }
+        .right-nav-dock a {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .right-nav-dock a:hover, .right-nav-dock a.active {
+            color: #ffffff;
+            background: var(--accent-crimson);
+            box-shadow: 0 4px 12px var(--accent-glow);
+        }
+
+        /* Section Layouts */
+        section {
+            padding: 140px 12% 100px 8%;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+        }
+
+        .section-title {
+            font-size: 2.6rem;
+            font-weight: 700;
+            margin-bottom: 25px;
+            position: relative;
+            letter-spacing: -1px;
+        }
+
+        /* Home Hero Layout Split Grid configured at a 60/40 visual balance ratio */
+        .home-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 60px;
+            align-items: center;
+            width: 100%;
+        }
+        .home-content {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        #home h1 {
+            font-size: 5.6rem;
+            line-height: 1.05;
+            font-weight: 700;
+            margin-bottom: 20px;
+            letter-spacing: -1.5px;
+        }
+        #home h1 span {
+            color: var(--accent-crimson);
+        }
+        #home h2 {
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: var(--primary);
+            margin-bottom: 30px;
+            letter-spacing: 0.5px;
+        }
+        #home p {
+            font-size: 1.15rem;
+            color: var(--text-secondary);
+            max-width: 650px;
+            margin-bottom: 45px;
+            line-height: 1.8;
+        }
+        
+        /* Advanced Hero Avatar Interface Matrix Wrapper */
+        .avatar-panel {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            width: 100%;
+            height: 100%;
+            perspective: 1200px; 
+        }
+
+        /* Radical Radial Glow Backplate Overlay */
+        .avatar-fab-glow {
+            position: absolute;
+            width: 420px;
+            height: 420px;
+            background: radial-gradient(circle, 
+                rgba(239, 68, 68, 0.25) 0%, 
+                rgba(168, 85, 247, 0.2) 35%, 
+                rgba(56, 189, 248, 0.08) 70%, 
+                transparent 100%);
+            filter: blur(20px);
+            z-index: -1;
+            pointer-events: none;
+            border-radius: 50%;
+            transform: translateZ(-50px);
+        }
+
+        .avatar-frame {
+            width: 100%;
+            max-width: 440px; 
+            height: 580px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: none;
+            background: transparent;
+            box-shadow: none;
+            backdrop-filter: none;
+            overflow: hidden;
+            position: relative;
+            
+            /* High-Performance Elegant Floating Animation Physics */
+            animation: elegantFloat 7s ease-in-out infinite;
+            transform-style: preserve-3d;
+            transition: transform 0.2s cubic-bezier(0.25, 1, 0.5, 1);
+            
+            /* Professional Cinematic Lower Torso Edge Fadeout Mask */
+            -webkit-mask-image: linear-gradient(to bottom, 
+                rgba(0,0,0,1) 0%, 
+                rgba(0,0,0,1) 82%, 
+                rgba(0,0,0,0) 100%);
+            mask-image: linear-gradient(to bottom, 
+                rgba(0,0,0,1) 0%, 
+                rgba(0,0,0,1) 82%, 
+                rgba(0,0,0,0) 100%);
+        }
+
+        .avatar-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain; 
+            object-position: center 30%; 
+            display: block;
+            pointer-events: none;
+        }
+
+        @keyframes elegantFloat {
+            0% { transform: translateY(0px) rotateY(0deg); }
+            50% { transform: translateY(-10px) rotateY(2deg); }
+            100% { transform: translateY(0px) rotateY(0deg); }
+        }
+
+        .action-cluster { display: flex; gap: 20px; flex-wrap: wrap; }
+        .btn-action {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 14px 28px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+        }
+        .btn-action.primary {
+            background: var(--accent-crimson);
+            color: #ffffff;
+            box-shadow: 0 4px 20px var(--accent-glow);
+        }
+        .btn-action.primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 26px rgba(239, 68, 68, 0.5);
+        }
+        .btn-action.secondary-outline {
+            background: transparent;
+            color: var(--primary);
+            border: 1px solid rgba(56, 189, 248, 0.3);
+        }
+        .btn-action.secondary-outline:hover {
+            border-color: var(--primary);
+            background: rgba(56, 189, 248, 0.05);
+            transform: translateY(-2px);
+        }
+
+        /* Block Box Grid Architecture */
+        .block-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px; 
+            width: 100%;
+        }
+        .info-block {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            padding: 16px 20px; 
+            border-radius: 6px;
+            backdrop-filter: blur(12px);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            min-height: 75px; 
+        }
+        .info-block p {
+            font-size: 0.85rem; 
+            color: var(--text-secondary);
+            margin-top: 6px;
+            line-height: 1.4;
+        }
+        .info-block:hover {
+            transform: translateY(-3px);
+            border-color: var(--accent-crimson);
+            box-shadow: 0 6px 20px -10px var(--accent-glow);
+        }
+        .info-block span {
+            font-family: monospace;
+            font-size: 0.75rem;
+            color: var(--accent-crimson);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 4px;
+        }
+        .info-block h3 {
+            font-size: 1.05rem; 
+            font-weight: 600;
+            color: var(--text-primary);
+            line-height: 1.3;
+        }
+
+        /* Competency Grid Setup */
+        .skills-container {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            width: 100%;
+        }
+        .skills-matrix-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+            width: 100%;
+        }
+        .expert-card {
+            background: rgba(15, 22, 42, 0.65);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 20px 24px;
+            border-radius: 8px;
+            backdrop-filter: blur(16px);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+            overflow: hidden;
+            min-height: 90px; 
+            transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+        .expert-card-left {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+        .expert-card h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            letter-spacing: -0.5px;
+        }
+        .expert-card p {
+            font-family: 'Space Grotesk', monospace;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+            letter-spacing: 0.3px;
+        }
+        .expert-card i {
+            font-size: 1.6rem;
+            color: var(--text-secondary);
+            transition: all 0.3s ease;
+            opacity: 0.6;
+        }
+        .expert-card:hover {
+            transform: translateY(-4px);
+            background: rgba(15, 22, 42, 0.85);
+            border-color: rgba(56, 189, 248, 0.4);
+            box-shadow: 0 10px 30px -10px rgba(56, 189, 248, 0.2);
+        }
+        .expert-card:nth-child(even):hover {
+            border-color: rgba(239, 68, 68, 0.4);
+            box-shadow: 0 10px 30px -10px rgba(239, 68, 68, 0.2);
+        }
+        .expert-card:hover i {
+            color: var(--primary);
+            opacity: 1;
+            transform: scale(1.1);
+        }
+        .expert-card:nth-child(even):hover i {
+            color: var(--accent-crimson);
+        }
+
+        /* About & Areas of Interest */
+        .about-intro-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            padding: 40px;
+            border-radius: 12px;
+            backdrop-filter: blur(12px);
+            margin-bottom: 35px;
+        }
+        .about-intro-card p {
+            color: var(--text-secondary);
+            font-size: 1.15rem;
+        }
+
+        .matrix-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--accent-crimson);
+            margin: 35px 0 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* Project Cards */
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+            width: 100%;
+        }
+        .project-card {
+            background: rgba(15, 22, 42, 0.65);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 24px;
+            backdrop-filter: blur(16px);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 280px; 
+            transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+        .project-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(239, 68, 68, 0.4);
+            box-shadow: 0 10px 30px -10px var(--accent-glow); 
+        }
+        .project-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 16px;
+        }
+        .project-icon-svg {
+            width: 42px;
+            height: 42px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 6px;
+            color: var(--primary);
+        }
+        .project-card:hover .project-icon-svg {
+            color: var(--accent-crimson);
+            background: rgba(239, 68, 68, 0.05);
+            border-color: rgba(239, 68, 68, 0.2);
+        }
+        .project-card h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            line-height: 1.3;
+        }
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 14px;
+        }
+        .tech-badge {
+            font-family: monospace;
+            font-size: 0.75rem;
+            color: var(--primary);
+            background: rgba(56, 189, 248, 0.06);
+            border: 1px solid rgba(56, 189, 248, 0.15);
+            padding: 2px 8px;
+            border-radius: 4px;
+        }
+        .project-card p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+            margin-bottom: auto; 
+        }
+        .project-actions {
+            display: flex;
+            gap: 12px;
+            margin-top: 20px;
+            padding-top: 16px;
+            border-top: 1px solid rgba(255, 255, 255, 0.04);
+        }
+        .btn-proj {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: all 0.2s ease;
+            background: transparent;
+        }
+        .btn-proj.git {
+            background: rgba(255, 255, 255, 0.04);
+            color: var(--text-primary);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .btn-proj.git:hover {
+            background: #ffffff;
+            color: var(--bg-dark);
+        }
+        .btn-proj.details {
+            color: var(--text-secondary);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            cursor: pointer;
+        }
+        .btn-proj.details:hover {
+            border-color: var(--accent-crimson);
+            color: #ffffff;
+        }
+        
+        /* Contact Form Layout Details */
+        .contact-wrapper { 
+            max-width: 850px; 
+            width: 100%; 
+            margin: 0 auto; 
+        }
+        .contact-intro-p {
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto 40px;
+            line-height: 1.6;
+        }
+        .contact-cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 16px;
+            margin-bottom: 32px;
+            width: 100%;
+        }
+        .contact-card-item {
+            background: rgba(15, 22, 42, 0.65);
+            border: 1px solid var(--border-color);
+            padding: 16px;
+            border-radius: 6px;
+            backdrop-filter: blur(12px);
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        .contact-card-item:hover {
+            transform: translateY(-3px);
+            border-color: rgba(239, 68, 68, 0.4);
+            box-shadow: 0 6px 20px -10px var(--accent-glow);
+        }
+        .contact-card-item i {
+            font-size: 1.3rem;
+            color: var(--primary);
+            transition: color 0.3s ease;
+        }
+        .contact-card-item:hover i {
+            color: var(--accent-crimson);
+        }
+        .contact-card-info span {
+            display: block;
+            font-family: monospace;
+            font-size: 0.7rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .contact-card-info h4 {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-top: 2px;
+        }
+        .contact-form {
+            background: rgba(15, 22, 42, 0.65);
+            border: 1px solid var(--border-color);
+            padding: 35px;
+            border-radius: 12px;
+            backdrop-filter: blur(12px);
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .form-group { display: flex; flex-direction: column; gap: 8px; }
+        .form-group label { 
+            font-family: monospace;
+            font-size: 0.75rem; 
+            font-weight: 600; 
+            text-transform: uppercase; 
+            letter-spacing: 1px; 
+            color: var(--accent-crimson); 
+        }
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 14px 18px;
+            background: rgba(6, 8, 20, 0.6);
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
+            border-radius: 6px;
+            font-family: inherit;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+        }
+        .contact-form input:focus, .contact-form textarea:focus {
+            outline: none;
+            border-color: rgba(239, 68, 68, 0.4);
+            background: rgba(6, 8, 20, 0.8);
+            box-shadow: 0 0 15px rgba(239, 68, 68, 0.1);
+        }
+
+        /* Clean Centered Copyright Footer */
+        .premium-footer {
+            width: 100%;
+            padding: 30px 8%;
+            border-top: 1px solid var(--border-color);
+            background: rgba(6, 8, 20, 0.9);
+            display: flex;
+            justify-content: center; 
+            align-items: center;
+            margin-top: 60px;
+        }
+        .footer-right p {
+            font-family: monospace;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            letter-spacing: 0.5px;
+        }
+        @media (max-width: 768px) {
+            .premium-footer { flex-direction: column; text-align: center; padding: 30px 5%; }
+        }
+
+        /* Modal Overlay Interfaces */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(3, 5, 13, 0.85);
+            backdrop-filter: blur(12px);
+            z-index: 2000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.4s ease;
+        }
+        .modal-overlay.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        .modal-window {
+            background: rgba(15, 22, 42, 0.95);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            width: 90%;
+            max-width: 550px;
+            padding: 32px;
+            position: relative;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+            transform: translateY(20px);
+            transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+        .modal-overlay.active .modal-window {
+            transform: translateY(0);
+        }
+        .modal-close-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: transparent;
+            border: none;
+            color: var(--text-secondary);
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+        .modal-close-btn:hover { color: var(--accent-crimson); }
+        .modal-window h2 {
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: var(--text-primary);
+        }
+        .modal-subtitle {
+            font-family: monospace;
+            font-size: 0.8rem;
+            color: var(--accent-crimson);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+        .modal-body {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 24px;
+        }
+        .modal-body ul {
+            margin-top: 8px;
+            padding-left: 20px;
+        }
+        .modal-body li { margin-bottom: 6px; }
+    </style>
+</head>
+<body>
+
+    <canvas id="fab-process-canvas"></canvas>
+    <div class="core-beam-glow"></div>
+
+    <header class="top-header">
+        <div class="logo">anudharsan<span>.</span></div>
+        <ul class="top-socials">
+            <li><a href="https://linkedin.com/in/anudharsan-r-r-2527b9277" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a></li>
+            <li><a href="mailto:anudharsan180@gmail.com" title="Direct Email"><i class="fa-regular fa-envelope"></i></a></li>
+            <li><a href="https://github.com/Anudharsan2006" target="_blank" class="github-icon-btn" title="GitHub"><i class="fab fa-github"></i></a></li>
+        </ul>
+    </header>
+
+    <nav class="right-nav-dock">
+        <a href="#home" class="nav-link active" title="Home View"><i class="fa-solid fa-house"></i></a>
+        <a href="#about" class="nav-link" title="About Subsystems"><i class="fa-solid fa-user"></i></a>
+        <a href="#skills" class="nav-link" title="Technical Matrix"><i class="fa-solid fa-layer-group"></i></a>
+        <a href="#projects" class="nav-link" title="Verified Innovations"><i class="fa-solid fa-laptop-code"></i></a>
+        <a href="#contact" class="nav-link" title="Contact Interface"><i class="fa-solid fa-envelope"></i></a>
+    </nav>
+
+    <section id="home">
+        <div class="home-grid">
+            <div class="home-content">
+                <h1> Engineering Intelligence <span>Digital Hardware</span></h1>
+                <h2>FPGA Developer | VLSI Enthusiast | Embedded Systems Engineer</h2>
+                <p>Building efficient digital systems through FPGA development, RTL design, and embedded engineering.</p>
+                <div class="action-cluster">
+                    <a href="#contact" class="btn-action primary">Contact Me</a>
+                    <a href="resume.pdf" download="Anudharsan_Resume.pdf" class="btn-action secondary-outline">Download CV</a>
+                </div>
+            </div>
+            
+            <div class="avatar-panel" id="avatar-interactive-zone">
+                <div class="avatar-fab-glow"></div>
+                <div class="avatar-frame">
+                    <img src="avatar.png" alt="Anudharsan R R Animated Profile Identity">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <h2 class="section-title">About Engineer</h2>
+        
+        <div class="about-intro-card">
+            <p>I am a pre Final-year engineering student specializing in electronics engineering (VLSI design and technology). My primary design objectives involve bridging the gaps between structural computing architecture and secure silicon logic arrays. Through systematic exploratory execution on FPGA topologies, I actively conceptualize secure accelerators and modular logical elements.</p>
+        </div>
+
+        <div class="matrix-title">Academic Architecture</div>
+        <div class="block-grid">
+            <div class="info-block">
+                <span>Institution</span>
+                <h3>M. Kumarasamy College of Engineering</h3>
+            </div>
+            <div class="info-block">
+                <span>Degree</span>
+                <h3>B.E. Electronics Engineering (VLSI)</h3>
+            </div>
+            <div class="info-block">
+                <span>Performance</span>
+                <h3>Current CGPA : 7.9</h3>
+            </div>
+            <div class="info-block">
+                <span>Timeline</span>
+                <h3>2024 — 2028</h3>
+            </div>
+        </div>
+
+        <div class="matrix-title"><i class="fa-solid fa-microchip"></i> Areas of Interest</div>
+        <div class="block-grid">
+            <div class="info-block">
+                <span>Architecture</span>
+                <h3>VLSI Design</h3>
+            </div>
+            <div class="info-block">
+                <span>Hardware Fabrics</span>
+                <h3>FPGA Prototyping</h3>
+            </div>
+            <div class="info-block">
+                <span>Silicon Pipeline</span>
+                <h3>ASIC Design Flow</h3>
+            </div>
+            <div class="info-block">
+                <span>Processor ISA</span>
+                <h3>RISC-V Architectures</h3>
+            </div>
+            <div class="info-block">
+                <span>Edge Medical</span>
+                <h3>Biomedical Hardware</h3>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <div class="welcome-tag"></div>
+        <h2 class="section-title">Technical Expertise</h2>
+        
+        <div class="skills-container">
+            <div class="matrix-title"><i class="fa-solid fa-microchip"></i> Digital Design</div>
+            <div class="skills-matrix-grid">
+                <div class="expert-card">
+                    <div class="expert-card-left">
+                        <h3>Verilog</h3>
+                        <p>RTL Design • FSM Design • Testbench Development</p>
+                    </div>
+                    <i class="fa-solid fa-code-branch"></i>
+                </div>
+                <div class="expert-card">
+                    <div class="expert-card-left">
+                        <h3>FPGA</h3>
+                        <p>Synthesis • Implementation • Timing Analysis</p>
+                    </div>
+                    <i class="fa-solid fa-diagram-project"></i>
+                </div>
+                <div class="expert-card">
+                    <div class="expert-card-left">
+                        <h3>RTL Design</h3>
+                        <p>Logic Synthesis • Data Path Tuning • Clock Domain Crossing</p>
+                    </div>
+                    <i class="fa-solid fa-bezier-curve"></i>
+                </div>
+                <div class="expert-card">
+                    <div class="expert-card-left">
+                        <h3>Digital Logic Design</h3>
+                        <p>Combinational Logic • Sequential Elements • Gate-Level Mapping</p>
+                    </div>
+                    <i class="fa-solid fa-wave-square"></i>
+                </div>
+            </div>
+
+            <div class="matrix-title"><i class="fa-solid fa-code"></i> Programming Languages</div>
+            <div class="skills-matrix-grid">
+                <div class="expert-card">
+                    <div class="expert-card-left">
+                        <h3>C</h3>
+                        <p>Embedded Firmware • Bare-Metal Driver Development • Pointer Mapping</p>
+                    </div>
+                    <i class="fa-solid fa-terminal"></i>
+                </div>
+                <div class="expert-card">
+                    <div class="expert-card-left">
+                        <h3>C++</h3>
+                        <p>Object-Oriented Logic • Hardware Abstraction Layers • STL Arrays</p>
+                    </div>
+                    <i class="fa-solid fa-cube"></i>
+                </div>
+                <div class="expert-card">
+                    <div class="expert-card-left">
+                        <h3>Python</h3>
+                        <p>Automation • Scripting • Data Processing</p>
+                    </div>
+                    <i class="fa-brands fa-python"></i>
+                </div>
+                <div class="expert-card">
+                    <div class="expert-card-left">
+                        <h3>Java</h3>
+                        <p>Application Subsystems • Concurrency • Algorithmic Execution</p>
+                    </div>
+                    <i class="fa-brands fa-java"></i>
+                </div>
+            </div>
+
+            <div class="matrix-title"><i class="fa-solid fa-screwdriver-wrench"></i> EDA & Development Tools</div>
+            <div class="skills-matrix-grid">
+                <div class="expert-card">
+                    <div class="expert-card-left">
+                        <h3>Xilinx Vivado</h3>
+                        <p>Design Entry • Synthesis • Bitstream Generation</p>
+                    </div>
+                    <i class="fa-solid fa-gears"></i>
+                </div>
+                <div class="expert-card">
+                    <div class="expert-card-left">
+                        <h3>Siemens Oasys</h3>
+                        <p>RTL Synthesis • Physical Optimization • Timing Closure</p>
+                    </div>
+                    <i class="fa-solid fa-bolt-lightning"></i>
+                </div>
+                <div class="expert-card">
+                    <div class="expert-card-left">
+                        <h3>Siemens Nitro</h3>
+                        <p>Place & Route • Clock Tree Synthesis • DRC Verification</p>
+                    </div>
+                    <i class="fa-solid fa-layer-group"></i>
+                </div>
+            </div>
+
+            <div class="matrix-title"><i class="fa-solid fa-globe"></i> Web Technologies</div>
+            <div class="skills-matrix-grid">
+                <div class="expert-card">
+                    <div class="expert-card-left">
+                        <h3>HTML</h3>
+                        <p>Semantic Frameworks • DOM Structure • Layout Architecture</p>
+                    </div>
+                    <i class="fa-solid fa-file-code"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <div class="welcome-tag"></div>
+        <h2 class="section-title">Verified Innovations</h2>
+        
+        <div class="project-grid">
+            <div class="project-card">
+                <div>
+                    <div class="project-header">
+                        <div class="project-icon-svg">
+                            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/><rect x="14" y="2" width="4" height="4" rx="1"/><rect x="6" y="18" width="4" height="4" rx="1"/></svg>
+                        </div>
+                        <h3>Real-Time Cardiac Digital Twin</h3>
+                    </div>
+                    <div class="project-tags">
+                        <span class="tech-badge">Verilog</span>
+                        <span class="tech-badge">FPGA</span>
+                        <span class="tech-badge">Medical SoC</span>
+                    </div>
+                    <p>An FPGA-accelerated mathematical hardware framework simulating complex 3D voxel cardiac electrophysiology waveforms in real-time.</p>
+                </div>
+                <div class="project-actions">
+                    <a href="https://github.com/Anudharsan2006" class="btn-proj git" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                    <button class="btn-proj details" onclick='openProjectModal("Real-Time Cardiac Digital Twin", "Verilog, Xilinx Vivado, FPGA PYNQ-Z2, Python", "<ul><li>Developed a real-time FPGA-based cardiac digital twin using a simplified ion-channel model.</li><li>Simulated drug-response behavior through switch-controlled conductance modifications.</li><li>Generated heartbeat patterns and visualized ECG waveforms using Python integration.</li><li>Implemented RTL architecture optimized for real-time biomedical signal processing.</li><li>Validated functionality through simulation and FPGA hardware deployment.</li></ul>", "https://github.com/Anudharsan2006")'>Details</button>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div>
+                    <div class="project-header">
+                        <div class="project-icon-svg">
+                            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><circle cx="12" cy="7" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="12" cy="17" r="2"/></svg>
+                        </div>
+                        <h3>Adaptive Traffic Control System</h3>
+                    </div>
+                    <div class="project-tags">
+                        <span class="tech-badge">RTL Design</span>
+                        <span class="tech-badge">Xilinx Vivado</span>
+                        <span class="tech-badge">FSM Arrays</span>
+                    </div>
+                    <p>High-throughput digital logic core scheduling dynamic real-time traffic signal adjustments using localized algorithmic optimization logic arrays.</p>
+                </div>
+                <div class="project-actions">
+                    <a href="https://github.com/Anudharsan2006" class="btn-proj git" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                    <button class="btn-proj details" onclick='openProjectModal("FPGA-Based Adaptive Traffic Control System", "Verilog, Xilinx Vivado, FPGA PYNQ-Z2", "<ul><li>Designed an FPGA-based adaptive traffic signal controller using Verilog HDL.</li><li>Dynamically adjusted signal timing based on varying traffic conditions.</li><li>Implemented eco-mode and slow-traffic handling to improve traffic efficiency.</li><li>Optimized hardware resources while maintaining real-time responsiveness.</li><li>Verified operation through simulation, synthesis, and FPGA testing.</li></ul>", "https://github.com/Anudharsan2006")'>Details</button>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div>
+                    <div class="project-header">
+                        <div class="project-icon-svg">
+                            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+                        </div>
+                        <h3>Smart Seat Belt Monitoring System</h3>
+                    </div>
+                    <div class="project-tags">
+                        <span class="tech-badge">Embedded Systems</span>
+                        <span class="tech-badge">Sensors</span>
+                        <span class="tech-badge">Firmware</span>
+                    </div>
+                    <p>A smart hardware sensor mesh tracking state changes across vehicle restraints to execute secure real-time notification alerts.</p>
+                </div>
+                <div class="project-actions">
+                    <a href="https://github.com/Anudharsan2006/Smart-seat-usage-detection-system-" class="btn-proj git" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                    <button class="btn-proj details" onclick='openProjectModal("Smart Seat Belt Monitoring System", "Arduino IDE, RFID Module, FSR Sensor, Embedded C", "<ul><li>Developed a smart vehicle safety system for monitoring seat belt compliance.</li><li>Integrated RFID authentication for authorized driver verification.</li><li>Used pressure sensing to detect seat occupancy and seat belt engagement.</li><li>Generated alerts for unsafe driving conditions and unauthorized vehicle usage.</li><li>Validated the system through real-time embedded hardware testing.</li></ul>", "https://github.com/Anudharsan2006/Smart-seat-usage-detection-system-")'>Details</button>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div>
+                    <div class="project-header">
+                        <div class="project-icon-svg">
+                            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 17V7h4a3 3 0 0 1 0 6H9"/></svg>
+                        </div>
+                        <h3>Intelligent Smart Parking System</h3>
+                    </div>
+                    <div class="project-tags">
+                        <span class="tech-badge">Java</span>
+                        <span class="tech-badge">IoT Core</span>
+                    </div>
+                    <p>Automated edge data node matrix tracking localized allocation profiles and broadcasting real-time structural analytics summaries.</p>
+                </div>
+                <div class="project-actions">
+                    <a href="https://github.com/Anudharsan2006/Smart-Parking-System" class="btn-proj git" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                    <button class="btn-proj details" onclick='openProjectModal("Smart Parking System", "Java, HTML, CSS, JavaScript", "<ul><li>Designed and developed a smart parking management platform.</li><li>Implemented parking slot monitoring and vehicle allocation functionalities.</li><li>Created an interactive user interface for parking management operations.</li><li>Improved parking utilization through efficient slot assignment logic.</li><li>Developed a scalable architecture suitable for campus and commercial parking systems.</li></ul>", "https://github.com/Anudharsan2006/Smart-Parking-System")'>Details</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal-overlay" id="project-modal" onclick="closeProjectModal(event)">
+            <div class="modal-window" onclick="event.stopPropagation()">
+                <button class="modal-close-btn" onclick="document.getElementById('project-modal').classList.remove('active')">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+                <div class="modal-subtitle">Project Infrastructure Summary</div>
+                <h2 id="modal-project-title">Project Name</h2>
+                <div class="modal-subtitle" style="color: var(--primary); margin-top: 12px;">Tools Used</div>
+                <div class="modal-body" id="modal-project-tools" style="font-family: monospace; font-size: 0.85rem; margin-bottom: 16px;">Tools list...</div>
+                <div class="modal-subtitle">Core Implementation</div>
+                <div class="modal-body" id="modal-project-details">Details list...</div>
+                <div class="project-actions" style="margin-top: 0; padding-top: 20px;">
+                    <a href="#" id="modal-project-github" class="btn-proj git" target="_blank"><i class="fab fa-github"></i> Repository Link</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="contact-wrapper">
+            <h2 class="section-title" style="text-align: center; margin-bottom: 12px;">Let's Connect</h2>
+            <p class="contact-intro-p">Interested in FPGA, VLSI, Embedded Systems, or collaboration opportunities? Feel free to reach out.</p>
+            
+            <div class="contact-cards-grid">
+                <a href="mailto:anudharsan180@gmail.com" class="contact-card-item">
+                    <i class="fa-regular fa-envelope"></i>
+                    <div class="contact-card-info">
+                        <span>Email Address</span>
+                        <h4>Send Signal</h4>
+                    </div>
+                </a>
+                <a href="https://linkedin.com/in/anudharsan-r-r-2527b9277" target="_blank" class="contact-card-item">
+                    <i class="fab fa-linkedin-in"></i>
+                    <div class="contact-card-info">
+                        <span>LinkedIn</span>
+                        <h4>Connect Profile</h4>
+                    </div>
+                </a>
+                <a href="https://github.com/Anudharsan2006" target="_blank" class="contact-card-item">
+                    <i class="fab fa-github"></i>
+                    <div class="contact-card-info">
+                        <span>GitHub</span>
+                        <h4>Explore Code</h4>
+                    </div>
+                </a>
+                <div class="contact-card-item" style="cursor: default;">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <div class="contact-card-info">
+                        <span>Location</span>
+                        <h4>Tamil Nadu, India</h4>
+                    </div>
+                </div>
+            </div>
+
+            <form class="contact-form" id="portfolio-contact-form">
+                <input type="hidden" name="access_key" value="0f862459-aabb-499b-8ae5-0f595b199cfe">
+                <input type="hidden" name="subject" value="New Portfolio Contact Submission">
+
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" id="form-name" name="name" placeholder="Enter your identity sequence" required>
+                </div>
+                <div class="form-group">
+                    <label>Email Address</label>
+                    <input type="email" id="form-email" name="email" placeholder="Enter your routing endpoint address" required>
+                </div>
+                <div class="form-group">
+                    <label>Message</label>
+                    <textarea rows="5" id="form-msg" name="message" placeholder="Write your data payload query sequence here..." required></textarea>
+                </div>
+                <div class="action-cluster" style="margin-top: 10px;">
+                    <button type="submit" id="form-submit-btn" class="btn-action primary" style="border:none; cursor:pointer;">Send Message</button>
+                </div>
+            </form>
+
+            <div id="form-success-toast" style="display: none; position: fixed; bottom: 30px; right: 30px; min-width: 320px; max-width: 420px; padding: 18px 24px; background: rgba(10, 15, 30, 0.9); border: 1px solid rgba(56, 189, 248, 0.4); border-radius: 8px; backdrop-filter: blur(20px); justify-content: space-between; align-items: center; box-shadow: 0 20px 40px rgba(0,0,0,0.5); z-index: 9999; animation: toastSlideIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);">
+                <div style="display: flex; align-items: center; gap: 14px;">
+                    <i class="fa-solid fa-circle-check" style="color: #38bdf8; font-size: 1.3rem; filter: drop-shadow(0 0 8px rgba(56, 189, 248, 0.5));"></i>
+                    <div style="display: flex; flex-direction: column; gap: 2px;">
+                        <span style="font-family: 'Space Grotesk', sans-serif; font-size: 0.75rem; color: #38bdf8; text-transform: uppercase; letter-spacing: 1px; font-weight: 700;">System Telemetry</span>
+                        <span style="font-family: monospace; font-size: 0.85rem; color: var(--text-primary); line-height: 1.3;">Routing successful. Payload logged.</span>
+                    </div>
+                </div>
+                <button type="button" onclick="this.parentElement.style.display='none'" style="background: transparent; border: none; color: var(--text-secondary); cursor: pointer; font-size: 1.1rem; padding-left: 15px; transition: color 0.2s;"><i class="fa-solid fa-xmark" onmouseover="this.style.color='#ef4444'" onmouseout="this.style.color='#94a3b8'"></i></button>
+            </div>
+
+            <style>
+                @keyframes toastSlideIn {
+                    from { transform: translateX(100%) translateY(20px); opacity: 0; }
+                    to { transform: translateX(0) translateY(0); opacity: 1; }
+                }
+            </style>
+        </div>
+    </section>
+
+    <footer class="premium-footer">
+        <div class="footer-right">
+            <p>&copy; 2026 Anudharsan R R. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const canvas = document.getElementById('fab-process-canvas');
+        const ctx = canvas.getContext('2d');
+
+        let width = canvas.width = window.innerWidth;
+        let height = canvas.height = window.innerHeight;
+
+        let mouseX = 0, mouseY = 0;
+        let targetX = 0, targetY = 0;
+        let globalClockPulse = 0;
+
+        const dieRegions = [];
+        const routingCorridors = [];
+        const signalTraces = [];
+        const scopeWaveforms = [];
+        
+        const hardwareLabels = ["CLB", "DSP", "BRAM", "IO", "PLL", "MMCM", "GTX", "LUT", "FF", "AXI", "FSM", "RTL"];
+        const rtlCodeSyntax = ["always @(posedge clk)", "module", "assign", "wire", "reg", "case", "begin", "end"];
+        const waveformLabels = ["CLK", "DATA", "READY", "VALID"];
+
+        function buildFPGAArchitecture() {
+            dieRegions.length = 0;
+            routingCorridors.length = 0;
+            scopeWaveforms.length = 0;
+
+            const xRegionCount = 4;
+            const yRegionCount = Math.ceil(height / 300);
+            const rWidth = width / xRegionCount;
+            const rHeight = 280;
+
+            for (let i = 0; i < xRegionCount; i++) {
+                for (let j = 0; j < yRegionCount; j++) {
+                    const rx = i * rWidth + 20;
+                    const ry = j * 340 + 40;
+                    
+                    let regionType = "CLB Tile Fabric";
+                    let accentLabel = "CLB";
+                    if (i === 1) { regionType = "DSP High-Slice Matrix"; accentLabel = "DSP"; }
+                    else if (i === 2) { regionType = "Block RAM Array (BRAM)"; accentLabel = "BRAM"; }
+                    else if (i === 3) { regionType = "High-Speed Transceiver IO Bank"; accentLabel = "IO"; }
+
+                    dieRegions.push({
+                        x: rx, y: ry,
+                        w: rWidth - 40, h: rHeight,
+                        type: regionType,
+                        tag: accentLabel,
+                        isCongested: (i === 0 && j === 0), 
+                        pulsePhase: Math.random() * Math.PI,
+                        rtlFragment: rtlCodeSyntax[Math.floor(Math.random() * rtlCodeSyntax.length)]
+                    });
+                }
+            }
+
+            for (let j = 0; j < yRegionCount; j++) {
+                routingCorridors.push({
+                    y: j * 340 + 320,
+                    h: 20
+                });
+            }
+
+            for (let k = 0; k < 2; k++) {
+                scopeWaveforms.push({
+                    x: 60 + (k * (width / 2.3)),
+                    y: height - 120,
+                    w: width / 2.6,
+                    label: waveformLabels[k % waveformLabels.length],
+                    phaseShift: Math.random() * 5
+                });
+            }
+        }
+
+        function launchSignalPacket() {
+            if (dieRegions.length === 0 || signalTraces.length > 5) return;
+
+            const packetColor = Math.random() * 10 > 7 ? "#ef4444" : "#38bdf8"; 
+            const randomY = Math.random() * height;
+
+            signalTraces.push({
+                x: width,
+                y: randomY,
+                targetX: 50,
+                speed: 3.5 + Math.random() * 4,
+                color: packetColor,
+                size: 2 + Math.random() * 2,
+                trail: []
+            });
+        }
+
+        function renderSiliconFabric() {
+            ctx.fillStyle = '#050711';
+            ctx.fillRect(0, 0, width, height);
+
+            mouseX += (targetX - mouseX) * 0.05;
+            mouseY += (targetY - mouseY) * 0.05;
+
+            globalClockPulse += 0.02;
+
+            ctx.save();
+            ctx.translate(mouseX, mouseY);
+
+            // LAYER 1: SILICON SEMICONDUCTOR DIE BASE
+            ctx.strokeStyle = 'rgba(255, 255, 255, 0.01)';
+            ctx.lineWidth = 1;
+            for (let x = 0; x < width; x += 32) {
+                ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, height); ctx.stroke();
+            }
+
+            // LAYER 2: FPGA FLOORPLAN & REGION BANK MATRICES
+            dieRegions.forEach(r => {
+                r.pulsePhase += 0.015;
+                let cellOpacity = r.isCongested ? 0.03 + (Math.sin(r.pulsePhase) * 0.02) : 0.015;
+                
+                ctx.fillStyle = r.isCongested ? 'rgba(239, 68, 68, ' + cellOpacity + ')' : 'rgba(56, 189, 248, ' + cellOpacity + ')';
+                ctx.fillRect(r.x, r.y, r.w, r.h);
+
+                ctx.strokeStyle = r.isCongested ? 'rgba(239, 68, 68, 0.04)' : 'rgba(255, 255, 255, 0.02)';
+                ctx.strokeRect(r.x, r.y, r.w, r.h);
+
+                ctx.strokeStyle = 'rgba(255, 255, 255, 0.005)';
+                const subSize = 16;
+                for (let sx = r.x; sx < r.x + r.w; sx += subSize) {
+                    ctx.beginPath(); ctx.moveTo(sx, r.y); ctx.lineTo(sx, r.y + r.h); ctx.stroke();
+                }
+
+                ctx.fillStyle = 'rgba(255, 255, 255, 0.04)';
+                ctx.font = '9px monospace';
+                ctx.fillText(`${r.tag} [AXI_PORT_M0]`, r.x + 12, r.y + 18);
+                
+                ctx.fillStyle = 'rgba(56, 189, 248, 0.03)';
+                ctx.font = '10px monospace';
+                ctx.fillText(r.rtlFragment, r.x + 12, r.y + r.h - 12);
+            });
+
+            routingCorridors.forEach(c => {
+                ctx.fillStyle = 'rgba(6, 182, 212, 0.008)';
+                ctx.fillRect(0, c.y, width, c.h);
+                ctx.strokeStyle = 'rgba(255, 255, 255, 0.015)';
+                ctx.beginPath(); ctx.moveTo(0, c.y); ctx.lineTo(width, c.y); ctx.stroke();
+                ctx.beginPath(); ctx.moveTo(0, c.y + c.h); ctx.lineTo(width, c.y + c.h); ctx.stroke();
+            });
+
+            // LAYER 3: HARDWARE ROUTING SIGNAL TRACES
+            if (Math.random() < 0.1) launchSignalPacket();
+
+            for (let i = signalTraces.length - 1; i >= 0; i--) {
+                const s = signalTraces[i];
+                s.x -= s.speed;
+                s.trail.push({ x: s.x, y: s.y });
+                if (s.trail.length > 8) s.trail.shift();
+
+                if (s.x < s.targetX) {
+                    signalTraces.splice(i, 1);
+                    continue;
+                }
+
+                ctx.beginPath();
+                for (let j = 0; j < s.trail.length; j++) {
+                    ctx.strokeStyle = s.color;
+                    ctx.globalAlpha = (j / s.trail.length) * 0.3;
+                    if (j === 0) ctx.moveTo(s.trail[j].x, s.trail[j].y);
+                    else ctx.lineTo(s.trail[j].x, s.trail[j].y);
+                }
+                ctx.stroke();
+                ctx.globalAlpha = 1.0;
+
+                ctx.fillStyle = s.color;
+                ctx.shadowColor = s.color;
+                ctx.shadowBlur = 6;
+                ctx.beginPath(); ctx.arc(s.x, s.y, s.size, 0, Math.PI * 2); ctx.fill();
+                ctx.shadowBlur = 0;
+            }
+
+            // LAYER 4: LOGIC ANALYZER TIMING DIAGRAMS
+            scopeWaveforms.forEach(w => {
+                ctx.strokeStyle = 'rgba(255, 255, 255, 0.015)';
+                ctx.strokeRect(w.x, w.y, w.w, 40);
+                
+                ctx.fillStyle = 'rgba(255, 255, 255, 0.05)';
+                ctx.font = '10px monospace';
+                ctx.fillText(w.label, w.x - 45, w.y + 24);
+
+                ctx.strokeStyle = '#38bdf8';
+                ctx.lineWidth = 1.5;
+                ctx.globalAlpha = 0.15;
+                ctx.beginPath();
+
+                let wx = w.x;
+                let wy = w.y + 30;
+                ctx.moveTo(wx, wy);
+
+                for (let sx = w.x; sx < w.x + w.w; sx += 20) {
+                    let state = Math.sin((sx * 0.05) + globalClockPulse + w.phaseShift) > 0;
+                    let nextY = state ? w.y + 10 : w.y + 30;
+                    ctx.lineTo(sx, wy);
+                    ctx.lineTo(sx, nextY);
+                    wy = nextY;
+                }
+                ctx.stroke();
+                ctx.globalAlpha = 1.0;
+                ctx.lineWidth = 1;
+            });
+
+            ctx.restore();
+            requestAnimationFrame(renderSiliconFabric);
+        }
+
+        window.addEventListener('mousemove', (e) => {
+            targetX = ((e.clientX / window.innerWidth) - 0.5) * -20;
+            targetY = ((e.clientY / window.innerHeight) - 0.5) * -20;
+        });
+
+        window.addEventListener('resize', () => {
+            width = canvas.width = window.innerWidth;
+            height = canvas.height = window.innerHeight;
+            buildFPGAArchitecture();
+        });
+
+        buildFPGAArchitecture();
+        renderSiliconFabric();
+
+        // Navigation Dock Highlighter Interconnections
+        const trackingSections = document.querySelectorAll('section');
+        const navigationDockLinks = document.querySelectorAll('.right-nav-dock .nav-link');
+
+        window.addEventListener('scroll', () => {
+            let currentSectionId = '';
+            trackingSections.forEach(sec => {
+                const topOffset = sec.offsetTop;
+                if (scrollY >= (topOffset - 250)) {
+                    currentSectionId = sec.getAttribute('id');
+                }
+            });
+            navigationDockLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').slice(1) === currentSectionId) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Modal Presentation Management Loops
+        function openProjectModal(title, tools, detailsHtml, githubLink) {
+            document.getElementById('modal-project-title').innerText = title;
+            document.getElementById('modal-project-tools').innerText = tools;
+            document.getElementById('modal-project-details').innerHTML = detailsHtml;
+            document.getElementById('modal-project-github').setAttribute('href', githubLink);
+            document.getElementById('project-modal').classList.add('active');
+        }
+
+        function closeProjectModal(event) {
+            if(event.target.id === 'project-modal') {
+                document.getElementById('project-modal').classList.remove('active');
+            }
+        }
+
+        // AJAX Form Transmission Logic
+        const contactForm = document.getElementById('portfolio-contact-form');
+        const successToast = document.getElementById('form-success-toast');
+        const submitBtn = document.getElementById('form-submit-btn');
+
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault(); 
+                
+                submitBtn.innerText = "Transmitting...";
+                submitBtn.style.opacity = "0.6";
+                submitBtn.disabled = true;
+
+                const formData = new FormData(contactForm);
+
+                fetch('https://api.web3forms.com/submit', {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        successToast.style.display = 'flex';
+                        successToast.style.opacity = '1';
+                        contactForm.reset();
+
+                        setTimeout(() => {
+                            successToast.style.opacity = '0';
+                            setTimeout(() => {
+                                successToast.style.display = 'none';
+                            }, 400); 
+                        }, 5000);
+                    } else {
+                        alert("Transmission failed: Gateway interconnect error.");
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert("Signal connection disrupted: Verification timeout.");
+                })
+                .finally(() => {
+                    submitBtn.innerText = "Send Message";
+                    submitBtn.style.opacity = "1";
+                    submitBtn.disabled = false;
+                });
+            });
+        }
+    </script>
+</body>
+</html>
